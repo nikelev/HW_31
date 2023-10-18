@@ -115,14 +115,14 @@ public class CompanyImpl implements Company {
     public Employee[] findEmployeesSalaryRange(int minSalary, int maxSalary) {
         int count = 0;
         for (int i = 0; i < sizeActual; i++) {
-            if (employees[i].calcSalary() > minSalary && employees[i].calcSalary() < maxSalary) {
+            if (employees[i].calcSalary() >= minSalary && employees[i].calcSalary() < maxSalary) {
                 count++;
             }
         }
 
         Employee[] res = new Employee[count];
         for (int i = 0, j = 0; j < res.length; i++) {
-            if (employees[i].calcSalary() > minSalary && employees[i].calcSalary() < maxSalary) {
+            if (employees[i].calcSalary() >= minSalary && employees[i].calcSalary() < maxSalary) {
                 res[j++] = employees[i];
                 //j++;
             }

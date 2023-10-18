@@ -98,7 +98,7 @@ class CompanyTest {
     @Test
     void findEmployeesSalaryRange() {
         Employee[] actual = company.findEmployeesSalaryRange(2000, 2400);
-        Employee[] expected = {firmEmplyee[2]};
+        Employee[] expected = {firmEmplyee[2], firmEmplyee[3]};
         assertArrayEquals(expected, actual);
 
     }
