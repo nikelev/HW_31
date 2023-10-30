@@ -15,7 +15,12 @@ public class CompanyImpl implements Company {
 
     @Override
     public boolean addEmployee(Employee employee) {
-        if (employee == null || sizeActual == employees.length || findEmployee(employee.getId()) != null) {
+        if (employee == null) {
+            throw new IllegalArgumentException();
+
+        }
+
+        if (sizeActual == employees.length || findEmployee(employee.getId()) != null) {
             return false;
         }
         employees[sizeActual] = employee;

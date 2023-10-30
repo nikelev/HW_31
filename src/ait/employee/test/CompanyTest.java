@@ -29,7 +29,7 @@ class CompanyTest {
 
     @org.junit.jupiter.api.Test
     void addEmployee() {
-        assertFalse(company.addEmployee(null));
+        assertEquals (new  IllegalArgumentException(), company.addEmployee(null));
         assertFalse(company.addEmployee(firmEmplyee[1]));
         Employee employee = new SalesManager(5000, "Peter", "Jackson", 160, 19000, 0.1);
         assertTrue(company.addEmployee(employee));
